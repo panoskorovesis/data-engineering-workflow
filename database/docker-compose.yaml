@@ -1,7 +1,7 @@
 version: "3.3"
 
 networks:
-  dtc_de-network:
+  workflow-network:
     driver: bridge
     ipam:
       driver: default
@@ -9,19 +9,19 @@ networks:
         - subnet: 172.19.238.0/24
 
 services:
-  pgdatabase:
-    container_name: pgdatabase
+  pgdatabase01:
+    container_name: pgdatabase01
     image: postgres:13
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
       - POSTGRES_DB=ny_taxi
     volumes:
-      - "./database/ny_taxi_postgres_data:/var/lib/postgresql/data:rw"
+      - "./ny_taxi_postgres_data:/var/lib/postgresql/data:rw"
     ports:
       - "5433:5432"
     networks:
-      - dtc_de-network
+      - workflow-network
 
   # pgadmin:
   #   image: dpage/pgadmin4
