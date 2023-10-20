@@ -1,2 +1,5 @@
-
+#postgress database files
 database/ny_taxi_postgres_data
+
+#python cache
+__pycache__
