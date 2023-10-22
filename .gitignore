@@ -3,3 +3,6 @@ database/ny_taxi_postgres_data
 
 #python cache
 __pycache__
+
+#airflow log files
+airflow/logs
