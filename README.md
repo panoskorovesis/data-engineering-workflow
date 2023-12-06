@@ -6,7 +6,7 @@ During this course the following milestones are achieved:
 
 1. Local hosting of a __Postgress DataBase using Docker__
 2. Local hosting of an __Airflow using Docker__
-3. An __ETL pipeline__ creation to fill the database with data
+3. An __ETL pipeline__ to fill the database with data from the NY Taxi Dataset
 4. More comming soon
 
 ## Setup
