@@ -23,8 +23,11 @@ def install_packages():
 
 def ingest_callable(table_name, csv_file, execution_date, color):
 
+    print('Will install packages')
+
     install_packages()
 
+    print('Packages installed')
     print(table_name, csv_file, execution_date)
 
     #the connection will be done by importing the created connection
@@ -42,7 +45,7 @@ def ingest_callable(table_name, csv_file, execution_date, color):
     df_tmp = pd.read_parquet(csv_file, engine='pyarrow')
     df_tmp.to_csv('/opt/airflow/' + csv_name)
 
-    df_iter = pd.read_csv(csv_name, iterator=True, chunksize=100000)
+    df_iter = pd.read_csv(csv_name, iterator=True, chunksize=50000)
     df = next(df_iter)
 
     if color == 'yellow':
